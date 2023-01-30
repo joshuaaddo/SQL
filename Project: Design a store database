@@ -1,0 +1,38 @@
+CREATE TABLE store (id INTEGER PRIMARY KEY, name TEXT, brand TEXT, type TEXT, size INTEGER, quantity INTEGER);
+
+INSERT INTO store VALUES (1, 'FlowMan', 'Adidas', 'TopHigh', 9, 25);
+INSERT INTO store VALUES (2, 'Aquaman', 'Nike', 'LowTop', 10, 45);
+INSERT INTO store VALUES (3, 'NightWalker', 'NewBalance', 'LowTop', 11, 32);
+INSERT INTO store VALUES (4, 'Berlin', 'Adidas', 'TopHigh', 8.5, 15);
+INSERT INTO store VALUES (5, 'Schone', 'Nike', 'TopHigh', 7, 20 );
+INSERT INTO store VALUES (6, 'Alte', 'NewBalance', 'Flat', 10, 10);
+INSERT INTO store VALUES (7, 'Alpha', 'Converse', 'Flat', 9, 45);
+INSERT INTO store VALUES (8, 'Veritas', 'Converse', 'Flat', 8.5, 35);
+INSERT INTO store VALUES (9, 'TMT', 'Nike', 'LowTop', 11, 75);
+INSERT INTO store VALUES (10, 'Mercy', 'Nike', 'HighTop', 9,
+50);
+INSERT INTO store VALUES (11, 'Jerry', 'NewBalance', 'Flat', 12, 30);
+INSERT INTO store VALUES (12, 'Challenger', 'Adidas', 'LowTop', 7, 50);
+INSERT INTO store VALUES (13, 'Toronto', 'Nike', 'HighTop', 9, 80);
+INSERT INTO store VALUES (14, 'Kobe08', 'Nike', 'HighTop', 12, 100);
+INSERT INTO store VALUES (15, 'Jordan23', 'Jordan', 'HighTop', 12, 150);
+INSERT INTO store VALUES (16, 'JordanRetro', 'Jordan', 'HighTop', 13, 200);
+
+-- display all Adidas products or all shoes with size 9
+SELECT *
+FROM store
+WHERE brand = 'Adidas' OR size = 9
+ORDER BY quantity desc;
+
+-- show the all brands with quantity of 50 or more
+SELECT *
+FROM store
+WHERE quantity > 50
+ORDER BY quantity desc
+
+-- show all shoes with size 9 and above
+;
+SELECT name, size, type 
+FROM store
+WHERE size >= 9 AND type = 'HighTop'
+ORDER BY size desc;
